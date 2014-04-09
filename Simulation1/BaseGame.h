@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Vector2.h"
+#include "Point.h"
 #include "GameTime.h"
 
 #pragma once
@@ -21,10 +21,10 @@ public:
 	static const ALLEGRO_COLOR BLACK;
 
 	//Constructors
-	BaseGame(Vector2 windowSize, ScreenType screenType, string windowTitle, double fps);
+	BaseGame(Point windowSize, ScreenType screenType, string windowTitle, double fps);
 	
 	//Getters and Setters
-	Vector2 getWindowSize();
+	Point getWindowSize();
 	void stop();
 
 	//Update and Draw
@@ -47,7 +47,7 @@ private:
 	void initScreen(ScreenType, string);
 	void initModules();
 
-	Vector2 windowSize;
+	Point windowSize;
 	GameTime* gameTime;
 	bool running;
 

@@ -6,7 +6,7 @@ const ALLEGRO_COLOR BaseGame::CORNFLOWER_BLUE = al_map_rgb(100, 149, 237);
 const ALLEGRO_COLOR BaseGame::WHITE = al_map_rgb(255, 255, 255);
 const ALLEGRO_COLOR BaseGame::BLACK = al_map_rgb(0, 0, 0);
 
-BaseGame::BaseGame(Vector2 windowSize, ScreenType screenType, string screenTitle, double fps) : fps(fps)
+BaseGame::BaseGame(Point windowSize, ScreenType screenType, string screenTitle, double fps) : fps(fps)
 {
 	this->windowSize = windowSize;
 	initScreen(screenType, screenTitle);
@@ -108,7 +108,7 @@ void BaseGame::run()
 	}
 }
 
-Vector2 BaseGame::getWindowSize() { return windowSize; }
+Point BaseGame::getWindowSize() { return windowSize; }
 
 BaseGame::~BaseGame(void)
 {

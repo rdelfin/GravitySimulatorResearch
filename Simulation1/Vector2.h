@@ -2,25 +2,25 @@
 class Vector2
 {
 public:
-	Vector2(double x, double y);
+	Vector2(Big<2, 10> x, Big<2, 10> y);
 	Vector2();
 
 	Vector2 operator+(Vector2);
 	Vector2 operator-(Vector2);
 
-	Vector2 operator+(double);
-	Vector2 operator-(double);
+	Vector2 operator*(Vector2);
+	Vector2 operator/(Vector2);
 
-	Vector2 operator*(double);
-	Vector2 operator/(double);
+	Vector2 operator*(Big<2, 10>);
+	Vector2 operator/(Big<2, 10>);
 
-	double length();
-	double angle();
+	Big<2, 10> length();
+	Big<2, 10> angle();
 
 	Vector2 normalize();
 
 	~Vector2(void);
 	
-	double x, y;
+	Big<2, 10> x, y;
 };
 

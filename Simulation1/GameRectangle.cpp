@@ -17,7 +17,7 @@ GameRectangle::GameRectangle(double x, double y, double width, double height)
 GameRectangle GameRectangle::operator+(GameRectangle r)
 { return GameRectangle(x + r.x, y + r.y, width + r.width, height + r.height); }
 GameRectangle GameRectangle::operator+(Vector2 v)
-{ return GameRectangle(x + v.x, y + v.y, width, height); }
+{ return GameRectangle(x + v.x.ToDouble(), y + v.y.ToDouble(), width, height); }
 GameRectangle GameRectangle::operator-(GameRectangle r)
 { return *this + GameRectangle(-r.x, -r.y, -r.width, -r.height); }
 GameRectangle GameRectangle::operator-(Vector2 v)

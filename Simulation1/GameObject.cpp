@@ -6,7 +6,7 @@ GameObject::GameObject()
 	
 }
 
-GameObject::GameObject(string path, Vector2 frameCount, int millPerFrame, Vector2 initPos)
+GameObject::GameObject(string path, Point frameCount, int millPerFrame, Point initPos)
 {
 	sprite = Sprite(path.c_str(), frameCount, millPerFrame);
 	position = initPos;
@@ -20,7 +20,7 @@ void GameObject::Update(GameTime* gameTime, ALLEGRO_KEYBOARD_STATE* keyState)
 	position = position + velocity * gameTime->getMillisecondsPerFrame();
 }
 
-void GameObject::Draw(Vector2 camPos)
+void GameObject::Draw(Point camPos)
 {
 	sprite.Draw(position - camPos);
 }

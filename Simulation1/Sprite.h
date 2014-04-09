@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Vector2.h"
+#include "Point.h"
 #include "GameTime.h"
 #include "GameRectangle.h"
 
@@ -8,10 +8,10 @@ class Sprite
 {
 public:
 	Sprite(void);
-	Sprite(const char* file, Vector2 frameCount, int millPerFrame = 200, bool repeat = true);
+	Sprite(const char* file, Point frameCount, int millPerFrame = 200, bool repeat = true);
 
 	void Update(GameTime*);
-	void Draw(Vector2);
+	void Draw(Point);
 	void Draw(GameRectangle destinationRectangle);
 	
 	void flip(bool = true);
@@ -22,16 +22,16 @@ public:
 
 	bool finishedAnim();
 
-	Vector2 getFrameSize();
-	Vector2 getImageSize();
-	Vector2 getFrameCount();
-	Vector2 getCurrentFrame();
+	Point getFrameSize();
+	Point getImageSize();
+	Point getFrameCount();
+	Point getCurrentFrame();
 
 	~Sprite(void);
 
 private:
 	ALLEGRO_BITMAP* sprite;
-	Vector2 imageSize, frameSize, frameCount, currentFrame;
+	Point imageSize, frameSize, frameCount, currentFrame;
 	int millPerFrame, timer;
 	bool flipped, repeat, finished;
 };

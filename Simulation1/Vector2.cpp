@@ -2,7 +2,7 @@
 #include "Vector2.h"
 
 
-Vector2::Vector2(double x, double y)
+Vector2::Vector2(Big<2, 10> x, Big<2, 10> y)
 {
 	this->x = x;
 	this->y = y;
@@ -21,26 +21,29 @@ Vector2 Vector2::operator+(Vector2 v)
 Vector2 Vector2::operator-(Vector2 v)
 { return (*this) + Vector2(-v.x, -v.y); }
 
-Vector2 Vector2::operator+(double v)
-{ return (*this) + Vector2(v, v); }
+Vector2 Vector2::operator*(Vector2 v)
+{ return Vector2(x * v.x, y * v.y); }
 
-Vector2 Vector2::operator-(double v)
-{ return (*this) + (-v); }
+Vector2 Vector2::operator/(Vector2 v)
+{ return (*this) * Vector2(Big<2, 10>(1)/v.x, Big<2, 10>(1)/v.y); }
 
-Vector2 Vector2::operator*(double d)
-{ return Vector2(x * d, y * d); }
-Vector2 Vector2::operator/(double d)
-{ return (*this) * (1/d); }
+Vector2 Vector2::operator*(Big<2, 10> d)
+{ return (*this) * Vector2(d, d); }
+
+Vector2 Vector2::operator/(Big<2, 10> d)
+{ return (*this) * Vector2(Big<2, 10>(1)/d, Big<2, 10>(1)/d); }
 
 
-double Vector2::length()
+
+
+Big<2, 10> Vector2::length()
 {
-	return sqrt(x*x + y*y);
+	return Sqrt(x*x + y*y);
 }
 
-double Vector2::angle()
+Big<2, 10> Vector2::angle()
 {
-	return acos(x / length());
+	return ACos(x / length());
 }
 
 Vector2 Vector2::normalize()
@@ -48,6 +51,6 @@ Vector2 Vector2::normalize()
 	return Vector2(x / length(), y / length());
 }
 
-Vector2::~Vector2(void)
+Vector2::~Vector2()
 {
 }

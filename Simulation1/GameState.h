@@ -2,15 +2,15 @@
 
 #pragma once
 
-#include "Vector2.h"
+#include "Point.h"
 #include "GameObject.h"
 
 class GameState
 {
 public:
-	GameState(Vector2 screenSize, ALLEGRO_KEYBOARD_STATE* keyState, ALLEGRO_KEYBOARD_STATE* prevKeyState);
+	GameState(Point screenSize, ALLEGRO_KEYBOARD_STATE* keyState, ALLEGRO_KEYBOARD_STATE* prevKeyState);
 
-	Vector2 getScreenSize();
+	Point getScreenSize();
 	void stop();
 	bool isRunning();
 
@@ -23,7 +23,7 @@ protected:
 	ALLEGRO_KEYBOARD_STATE *keyState, *prevKeyState;
 
 private:
-	Vector2 screenSize;
+	Point screenSize;
 	bool running;
 };
 

@@ -2,6 +2,7 @@
 
 #include "BaseGame.h"
 #include "GameTime.h"
+#include "GameState.h"
 
 class Game : public BaseGame
 {
@@ -10,6 +11,9 @@ public:
 
 	virtual void Update(GameTime*);
 	virtual void Draw(GameTime*);
+
+	GameState *currentState;
+	ALLEGRO_FONT *font;
 
 	~Game(void);
 };

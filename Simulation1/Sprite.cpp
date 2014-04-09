@@ -6,13 +6,13 @@ Sprite::Sprite(void)
 {
 }
 
-Sprite::Sprite(const char* file, Vector2 frameCount, int millPerFrame, bool repeat)
+Sprite::Sprite(const char* file, Point frameCount, int millPerFrame, bool repeat)
 {
 	this->sprite = al_load_bitmap(file);
-	this->imageSize = Vector2(al_get_bitmap_width(sprite), al_get_bitmap_height(sprite));
+	this->imageSize = Point(al_get_bitmap_width(sprite), al_get_bitmap_height(sprite));
 	this->frameCount = frameCount;
-	this->frameSize = Vector2(imageSize.x / frameCount.x, imageSize.y / frameCount.y);
-	this->currentFrame = Vector2(0, 0);
+	this->frameSize = Point(imageSize.x / frameCount.x, imageSize.y / frameCount.y);
+	this->currentFrame = Point(0, 0);
 	this->millPerFrame = millPerFrame;
 	this->timer = 0;
 	this->flipped = false;
@@ -20,10 +20,10 @@ Sprite::Sprite(const char* file, Vector2 frameCount, int millPerFrame, bool repe
 	this->finished = false;
 }
 
-Vector2 Sprite::getImageSize() { return imageSize; }
-Vector2 Sprite::getFrameSize() { return frameSize; }
-Vector2 Sprite::getFrameCount() { return frameCount; }
-Vector2 Sprite::getCurrentFrame() { return currentFrame; }
+Point Sprite::getImageSize() { return imageSize; }
+Point Sprite::getFrameSize() { return frameSize; }
+Point Sprite::getFrameCount() { return frameCount; }
+Point Sprite::getCurrentFrame() { return currentFrame; }
 bool Sprite::finishedAnim() { return finished; }
 
 void Sprite::Update(GameTime* gameTime)
@@ -51,7 +51,7 @@ void Sprite::Update(GameTime* gameTime)
 }
 
 
-void Sprite::Draw(Vector2 position)
+void Sprite::Draw(Point position)
 {
 	al_draw_bitmap_region(sprite, currentFrame.x * frameSize.x,
 		currentFrame.y * frameSize.y, frameSize.x, frameSize.y, position.x,
@@ -68,7 +68,7 @@ void Sprite::Draw(GameRectangle destinationRectangle)
 
 void Sprite::reset()
 {
-	currentFrame = Vector2(0, 0);
+	currentFrame = Point(0, 0);
 	timer = 0;
 	finished = false;
 }
