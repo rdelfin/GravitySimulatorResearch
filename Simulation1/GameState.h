@@ -8,7 +8,7 @@
 class GameState
 {
 public:
-	GameState(Point screenSize, ALLEGRO_KEYBOARD_STATE* keyState, ALLEGRO_KEYBOARD_STATE* prevKeyState);
+	GameState(Point screenSize, ALLEGRO_KEYBOARD_STATE* keyState, ALLEGRO_KEYBOARD_STATE* prevKeyState, ALLEGRO_MOUSE_STATE* mouseState, ALLEGRO_MOUSE_STATE* prevMouseState);
 
 	Point getScreenSize();
 	void stop();
@@ -21,6 +21,7 @@ public:
 
 protected:
 	ALLEGRO_KEYBOARD_STATE *keyState, *prevKeyState;
+	ALLEGRO_MOUSE_STATE *mouseState, *prevMouseState;
 
 private:
 	Point screenSize;

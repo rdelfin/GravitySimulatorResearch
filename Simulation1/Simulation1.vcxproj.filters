@@ -19,6 +19,15 @@
     <Filter Include="Source Files\Utility">
       <UniqueIdentifier>{762041dc-ee16-47e9-b8fc-cd276ea43393}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\TTMath">
+      <UniqueIdentifier>{45ee6bd1-b17c-405e-b706-c88d5a28a162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\State">
+      <UniqueIdentifier>{e81ccbfb-7c04-4fbc-86bc-c6431faaf537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State">
+      <UniqueIdentifier>{5b5c1e2b-d17b-478d-b94c-4d42120cb623}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseGame.cpp">
@@ -28,9 +37,6 @@
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="GameRectangle.cpp">
-      <Filter>Source Files\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
       <Filter>Source Files\Utility</Filter>
     </ClCompile>
     <ClCompile Include="GameTime.cpp">
@@ -51,6 +57,24 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Planet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="PlanetTestState.cpp">
+      <Filter>Source Files\State</Filter>
+    </ClCompile>
+    <ClCompile Include="BigGameRect.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGame.h">
@@ -60,9 +84,6 @@
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
     <ClInclude Include="GameRectangle.h">
-      <Filter>Header Files\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
     <ClInclude Include="GameTime.h">
@@ -88,6 +109,63 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmath.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathint.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathmisc.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathobjects.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathparser.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmaththreads.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathtypes.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathuint.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathuint_noasm.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathuint_x86.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathuint_x86_64.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathdec.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="ttmathbig.h">
+      <Filter>Header Files\TTMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Planet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files\State</Filter>
+    </ClInclude>
+    <ClInclude Include="BigGameRect.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="PlanetTestState.h">
+      <Filter>Header Files\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

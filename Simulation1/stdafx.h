@@ -26,3 +26,5 @@
 
 using namespace std;
 using namespace ttmath;
+
+typedef Big<1, 3> BigNum;

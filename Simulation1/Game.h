@@ -13,7 +13,6 @@ public:
 	virtual void Draw(GameTime*);
 
 	GameState *currentState;
-	ALLEGRO_FONT *font;
 
 	~Game(void);
 };

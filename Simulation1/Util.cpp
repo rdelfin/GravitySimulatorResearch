@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Util.h"
 
-const Big<2, 5> Util::G(/*"0.0000000000667384"*/1);
+const BigNum Util::G("0.0000000000667384");
 
 Util::Util(void)
 {

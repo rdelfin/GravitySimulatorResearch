@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Vector2.h"
 #include "ttmathbig.h"
 
@@ -8,7 +9,7 @@ class BigGameRect
 {
 public:
 	BigGameRect();
-	BigGameRect(Big<2, 5> x, Big<2, 5> y, Big<2, 5> width, Big<2, 5> height);
+	BigGameRect(BigNum x, BigNum y, BigNum width, BigNum height);
 
 	BigGameRect operator+(BigGameRect);
 	BigGameRect operator+(Vector2);
@@ -21,11 +22,11 @@ public:
 
 	~BigGameRect();
 	
-	Big<2, 5> x, y, width, height;
+	BigNum x, y, width, height;
 
-	Big<2, 5> bottom();
-	Big<2, 5> top();
-	Big<2, 5> right();
-	Big<2, 5> left();
+	BigNum bottom();
+	BigNum top();
+	BigNum right();
+	BigNum left();
 };
 

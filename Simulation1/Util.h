@@ -6,6 +6,6 @@ public:
 	Util(void);
 	~Util(void);
 
-	static const Big<2, 5> G;
+	static const BigNum G;
 };
 

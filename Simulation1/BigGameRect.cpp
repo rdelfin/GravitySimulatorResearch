@@ -8,7 +8,7 @@ BigGameRect::BigGameRect()
 	this->BigGameRect::BigGameRect(0, 0, 0, 0);
 }
 
-BigGameRect::BigGameRect(Big<2, 5> x, Big<2, 5> y, Big<2, 5> width, Big<2, 5> height)
+BigGameRect::BigGameRect(BigNum x, BigNum y, BigNum width, BigNum height)
 {
 	this->x = x;
 	this->y = y;
@@ -48,10 +48,10 @@ bool BigGameRect::intersects(BigGameRect r)
 	return horizontalInside && verticalInside;
 }
 
-Big<2, 5> BigGameRect::bottom() { return y + height; }
-Big<2, 5> BigGameRect::top() { return y; }
-Big<2, 5> BigGameRect::left() { return x; }
-Big<2, 5> BigGameRect::right() { return x + width; }
+BigNum BigGameRect::bottom() { return y + height; }
+BigNum BigGameRect::top() { return y; }
+BigNum BigGameRect::left() { return x; }
+BigNum BigGameRect::right() { return x + width; }
 
 BigGameRect::~BigGameRect(void)
 {

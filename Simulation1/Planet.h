@@ -5,12 +5,14 @@ class Planet
 {
 public:
 	Planet();
-	Planet(Vector2 position, Vector2 velocity, Big<2, 5> mass, Big<2, 5> radius, ALLEGRO_COLOR color);
+	Planet(Vector2 position, Vector2 velocity, BigNum mass, BigNum radius, ALLEGRO_COLOR color);
 	
 	void UpdateForce(vector<Planet*>);
-	void UpdatePosition(Big<2, 5> timeStep);
+	void UpdatePosition(BigNum timeStep);
 
-	void Draw(Big<2, 5> pixelToMeter, Vector2 camPos, Vector2 screenSize);
+	void Draw(BigNum pixelToMeter, Vector2 camPos, Vector2 screenSize, int index, ALLEGRO_FONT*);
+
+	Vector2 getPosition();
 
 	~Planet(void);
 
@@ -19,12 +21,14 @@ private:
 	Vector2 velocity;
 	Vector2 acceleration;
 
-	Big<2, 5> mass;
-	Big<2, 5> radius;
+	BigNum mass;
+	BigNum radius;
 
 	ALLEGRO_COLOR color;
 
 	long timeStep;
+
+	double ringDistance;
 
 	bool firstUpdate;
 

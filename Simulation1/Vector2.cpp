@@ -2,7 +2,7 @@
 #include "Vector2.h"
 
 
-Vector2::Vector2(Big<2, 10> x, Big<2, 10> y)
+Vector2::Vector2(BigNum x, BigNum y)
 {
 	this->x = x;
 	this->y = y;
@@ -25,23 +25,23 @@ Vector2 Vector2::operator*(Vector2 v)
 { return Vector2(x * v.x, y * v.y); }
 
 Vector2 Vector2::operator/(Vector2 v)
-{ return (*this) * Vector2(Big<2, 10>(1)/v.x, Big<2, 10>(1)/v.y); }
+{ return (*this) * Vector2(BigNum(1)/v.x, BigNum(1)/v.y); }
 
-Vector2 Vector2::operator*(Big<2, 10> d)
+Vector2 Vector2::operator*(BigNum d)
 { return (*this) * Vector2(d, d); }
 
-Vector2 Vector2::operator/(Big<2, 10> d)
-{ return (*this) * Vector2(Big<2, 10>(1)/d, Big<2, 10>(1)/d); }
+Vector2 Vector2::operator/(BigNum d)
+{ return (*this) * Vector2(BigNum(1)/d, BigNum(1)/d); }
 
 
 
 
-Big<2, 10> Vector2::length()
+BigNum Vector2::length()
 {
 	return Sqrt(x*x + y*y);
 }
 
-Big<2, 10> Vector2::angle()
+BigNum Vector2::angle()
 {
 	return ACos(x / length());
 }

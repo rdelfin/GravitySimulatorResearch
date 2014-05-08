@@ -7,7 +7,7 @@ Planet::Planet()
 {
 }
 
-Planet::Planet(Vector2 position, Vector2 velocity, Big<2, 5> mass, Big<2, 5> radius, ALLEGRO_COLOR color)
+Planet::Planet(Vector2 position, Vector2 velocity, BigNum mass, BigNum radius, ALLEGRO_COLOR color)
 {
 	this->position = position;
 	this->velocity = velocity;
@@ -15,6 +15,7 @@ Planet::Planet(Vector2 position, Vector2 velocity, Big<2, 5> mass, Big<2, 5> rad
 	this->radius = radius;
 	this->firstUpdate = true;
 	this->color = color;
+	this->ringDistance = 20;
 }
 
 void Planet::UpdateForce(vector<Planet*> planet)
@@ -28,13 +29,13 @@ void Planet::UpdateForce(vector<Planet*> planet)
 
 		Vector2 vectorDir = planet[i]->position - position;
 		Big<2 ,5> distance = vectorDir.length();
-		Big<2, 5> scalarAcceleration = Util::G * planet[i]->mass / (distance*distance);
+		BigNum scalarAcceleration = Util::G * planet[i]->mass / (distance*distance);
 
-		acceleration = vectorDir * scalarAcceleration;
+		acceleration = acceleration + vectorDir.normalize() * scalarAcceleration;
 	}
 }
 
-void Planet::UpdatePosition(Big<2, 5> timeStep)
+void Planet::UpdatePosition(BigNum timeStep)
 {
 	if(firstUpdate)
 	{
@@ -50,23 +51,28 @@ void Planet::UpdatePosition(Big<2, 5> timeStep)
 	position = position + velocity * timeStep;
 }
 
-void Planet::Draw(Big<2, 5> pixelToMeter, Vector2 camPos, Vector2 screenSize)
+void Planet::Draw(BigNum pixelToMeter, Vector2 camPos, Vector2 screenSize, int index, ALLEGRO_FONT* font)
 {
 	Vector2 camOrigin = Vector2(camPos.x - (screenSize.x * pixelToMeter / 2), camPos.y - (screenSize.y * pixelToMeter / 2));
 	//BigGameRect drawRect(camPos.x - (screenSize.x * pixelToMeter / 2), camPos.y - (screenSize.y * pixelToMeter / 2), screenSize.x * pixelToMeter, screenSize.y * pixelToMeter);
-	Big<2, 5> displaySize = radius / pixelToMeter;
+	BigNum displaySize = radius / pixelToMeter;
 	
 	Vector2 pixelPosition = (position - camOrigin) / pixelToMeter;
 
 	al_draw_filled_circle(pixelPosition.x.ToDouble(), pixelPosition.y.ToDouble(), displaySize.ToDouble(), color);
 
-	al_draw_circle(pixelPosition.x.ToDouble(), pixelPosition.y.ToDouble(), displaySize.ToDouble() + 20, color, 2);
+	al_draw_circle(pixelPosition.x.ToDouble(), pixelPosition.y.ToDouble(), displaySize.ToDouble() + ringDistance, color, 2);
+	
+	al_draw_textf(font, al_map_rgb(255, 255, 255), pixelPosition.x.ToDouble() - displaySize.ToDouble() - ringDistance - 10, pixelPosition.y.ToDouble() - displaySize.ToDouble() - ringDistance - 10, 0, "%i", index);
 
 	/*if(displaySize < 5)
 	{
 		
 	}*/
 }
+
+
+Vector2 Planet::getPosition() { return position; }
 
 
 Planet::~Planet(void)
