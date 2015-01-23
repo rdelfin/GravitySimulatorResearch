@@ -5,10 +5,15 @@
 
 BigGameRect::BigGameRect()
 {
-	this->BigGameRect::BigGameRect(0, 0, 0, 0);
+	init(0, 0, 0, 0);
 }
 
-BigGameRect::BigGameRect(BigNum x, BigNum y, BigNum width, BigNum height)
+BigGameRect::BigGameRect(const BigNum& x, const BigNum& y, const BigNum& width, const BigNum& height)
+{
+	init(x, y, width, height);
+}
+
+void BigGameRect::init(const BigNum& x, const BigNum& y, const BigNum& width, const BigNum& height)
 {
 	this->x = x;
 	this->y = y;
