@@ -9,7 +9,7 @@ class BigGameRect
 {
 public:
 	BigGameRect();
-	BigGameRect(BigNum x, BigNum y, BigNum width, BigNum height);
+	BigGameRect(const BigNum& x, const BigNum& y, const BigNum& width, const BigNum& height);
 
 	BigGameRect operator+(BigGameRect);
 	BigGameRect operator+(Vector2);
@@ -21,12 +21,14 @@ public:
 	bool intersects(BigGameRect);
 
 	~BigGameRect();
-	
+
 	BigNum x, y, width, height;
 
 	BigNum bottom();
 	BigNum top();
 	BigNum right();
 	BigNum left();
-};
 
+private:
+	void init(const BigNum& x, const BigNum& y, const BigNum& width, const BigNum& height);
+};

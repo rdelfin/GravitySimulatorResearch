@@ -14,7 +14,7 @@ BaseGame::BaseGame(Point windowSize, ScreenType screenType, string screenTitle, 
 
 	al_get_keyboard_state(&keyState);
 	al_get_mouse_state(&mouseState);
-	
+
 	eventQueue = al_create_event_queue();
 	timer = al_create_timer(1/this->fps);
 
@@ -31,28 +31,32 @@ void BaseGame::initScreen(ScreenType screenType, string screenTitle)
 {
 	if(!al_init())
 	{
-		al_show_native_message_box(NULL, "Error", "Error", "Could not initialize Allegro 5", NULL, NULL);
+		cout << "Could not initialize Allegro 5" << endl;
+		//al_show_native_message_box(NULL, "Error", "Error", "Could not initialize Allegro 5", NULL, 0);
 		exit(-1);
 	}
 
 	int displayFlags = 0;
 	switch(screenType)
 	{
-	case WINDOW: displayFlags = ALLEGRO_WINDOWED; break;
-	case FULLSCREEN: displayFlags = ALLEGRO_FULLSCREEN; break;
-	case FULLSCREEN_WINDOWED: displayFlags = ALLEGRO_FULLSCREEN | ALLEGRO_FULLSCREEN_WINDOW; break;
-	default: displayFlags = ALLEGRO_WINDOWED;
+		case WINDOW: displayFlags = ALLEGRO_WINDOWED; break;
+		case FULLSCREEN: displayFlags = ALLEGRO_FULLSCREEN; break;
+		case FULLSCREEN_WINDOWED: displayFlags = ALLEGRO_FULLSCREEN | ALLEGRO_FULLSCREEN_WINDOW; break;
+		default: displayFlags = ALLEGRO_WINDOWED;
 	}
 	al_set_new_display_flags(displayFlags);
+
 	display = al_create_display(windowSize.x, windowSize.y);
-	al_set_window_position(display, 0, 0);
-	al_set_window_title(display, screenTitle.c_str());
 
 	if(!display)
 	{
-		al_show_native_message_box(display, "Error", "Error", "Could not create Allegro Window", NULL, NULL);
+		cout << "Could not create Allegro Window" << endl;
+		//al_show_native_message_box(display, "Error", "Error", "Could not create Allegro Window", NULL, 0);
 		exit(-1);
 	}
+
+	al_set_window_position(display, 0, 0);
+	al_set_window_title(display, screenTitle.c_str());
 }
 
 void BaseGame::initModules()
@@ -67,8 +71,9 @@ void BaseGame::initModules()
 		al_install_audio() &&
 		al_install_joystick()))
 	{
-		al_show_native_message_box(display, "Error!", "ERROR 42 (0x2a)", 
-			"Error while loading allegro modules. Please contact distributor and inform them of this error.", NULL, NULL);
+		cout << "Error while loading allegro modules. Please contact distributor and inform them of this error." << endl;
+		//al_show_native_message_box(display, "Error!", "ERROR 42 (0x2a)",
+			//"Error while loading allegro modules. Please contact distributor and inform them of this error.", NULL, 0);
 		exit(42);
 	}
 }
