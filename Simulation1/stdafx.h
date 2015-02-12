@@ -25,8 +25,8 @@
 #include "ttmath.h"
 
 
-using namespace std;
-using namespace std::chrono;
-using namespace ttmath;
+//using namespace std;
+//using namespace std::chrono;
+//using namespace ttmath;
 
-typedef Big<1, 3> BigNum;
+typedef ttmath::Big<1, 3> BigNum;

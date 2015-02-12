@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "GameTime.h"
 
+using namespace std::chrono;
+
 GameTime::GameTime(void)
 {
 	start = system_clock::now();

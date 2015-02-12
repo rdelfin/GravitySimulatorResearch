@@ -14,6 +14,6 @@ public:
 	void reset();
 
 private:
-	time_point<system_clock> start, lastFrame, currFrame;
+	std::chrono::time_point<std::chrono::system_clock> start, lastFrame, currFrame;
 
 };

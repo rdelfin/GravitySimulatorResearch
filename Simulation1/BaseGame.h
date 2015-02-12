@@ -21,8 +21,8 @@ public:
 	static const ALLEGRO_COLOR BLACK;
 
 	//Constructors
-	BaseGame(Point windowSize, ScreenType screenType, string windowTitle, double fps);
-	
+	BaseGame(Point windowSize, ScreenType screenType, std::string windowTitle, double fps);
+
 	//Getters and Setters
 	Point getWindowSize();
 	void stop();
@@ -44,7 +44,7 @@ protected:
 	ALLEGRO_MOUSE_STATE prevMouseState;
 
 private:
-	void initScreen(ScreenType, string);
+	void initScreen(ScreenType, std::string);
 	void initModules();
 
 	Point windowSize;
@@ -57,4 +57,3 @@ private:
 	ALLEGRO_TIMER *timer;
 	ALLEGRO_EVENT_QUEUE* eventQueue;
 };
-

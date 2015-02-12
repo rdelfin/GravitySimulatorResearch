@@ -3,6 +3,8 @@
 #include "Util.h"
 #include "BigGameRect.h"
 
+using namespace std;
+
 Planet::Planet()
 {
 }
@@ -56,18 +58,18 @@ void Planet::Draw(BigNum pixelToMeter, Vector2 camPos, Vector2 screenSize, int i
 	Vector2 camOrigin = Vector2(camPos.x - (screenSize.x * pixelToMeter / 2), camPos.y - (screenSize.y * pixelToMeter / 2));
 	//BigGameRect drawRect(camPos.x - (screenSize.x * pixelToMeter / 2), camPos.y - (screenSize.y * pixelToMeter / 2), screenSize.x * pixelToMeter, screenSize.y * pixelToMeter);
 	BigNum displaySize = radius / pixelToMeter;
-	
+
 	Vector2 pixelPosition = (position - camOrigin) / pixelToMeter;
 
 	al_draw_filled_circle(pixelPosition.x.ToDouble(), pixelPosition.y.ToDouble(), displaySize.ToDouble(), color);
 
 	al_draw_circle(pixelPosition.x.ToDouble(), pixelPosition.y.ToDouble(), displaySize.ToDouble() + ringDistance, color, 2);
-	
+
 	al_draw_textf(font, al_map_rgb(255, 255, 255), pixelPosition.x.ToDouble() - displaySize.ToDouble() - ringDistance - 10, pixelPosition.y.ToDouble() - displaySize.ToDouble() - ringDistance - 10, 0, "%i", index);
 
 	/*if(displaySize < 5)
 	{
-		
+
 	}*/
 }
 

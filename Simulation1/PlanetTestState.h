@@ -11,7 +11,7 @@ public:
 	virtual void Update(GameTime*);
 	virtual void Draw();
 
-	vector<Planet*> planets;
+	std::vector<Planet*> planets;
 
 	~PlanetTestState(void);
 
@@ -25,4 +25,3 @@ private:
 	//-1 if camera is free. Otherwise, it indicates the index of the body in the camera's center
 	int camFocus;
 };
-

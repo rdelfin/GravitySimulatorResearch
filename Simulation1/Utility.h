@@ -6,9 +6,8 @@ class Utility
 public:
 	Utility();
 
-	static bool separateList(vector<string>&, string);
-	static vector<string> split(const string& s, const string& delim, const bool keep_empty = true);
+	static bool separateList(std::vector<std::string>&, std::string);
+	static std::vector<std::string> split(const std::string& s, const std::string& delim, const bool keep_empty = true);
 
 	~Utility();
 };
-

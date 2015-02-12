@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "GameObject.h"
 
+using namespace std;
+
 GameObject::GameObject()
 {
-	
+
 }
 
 GameObject::GameObject(string path, Point frameCount, int millPerFrame, Point initPos)

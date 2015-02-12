@@ -2,6 +2,9 @@
 
 #include "BaseGame.h"
 
+using namespace ttmath;
+using namespace std;
+
 const ALLEGRO_COLOR BaseGame::CORNFLOWER_BLUE = al_map_rgb(100, 149, 237);
 const ALLEGRO_COLOR BaseGame::WHITE = al_map_rgb(255, 255, 255);
 const ALLEGRO_COLOR BaseGame::BLACK = al_map_rgb(0, 0, 0);

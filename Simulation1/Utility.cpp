@@ -2,6 +2,8 @@
 #include "Utility.h"
 #include "SimpleIni.h"
 
+using namespace std;
+
 Utility::Utility(void)
 {
 }
@@ -14,7 +16,7 @@ bool Utility::separateList(vector<string>& vec, string listToSeparate)
 		return false;
 
 	listToSeparate = listToSeparate.substr(1, listToSeparate.length() - 2);
-	
+
 	vec = split(listToSeparate, ";");
 
 	if(vec.size() == 0)

@@ -6,8 +6,8 @@ class Planet
 public:
 	Planet();
 	Planet(Vector2 position, Vector2 velocity, BigNum mass, BigNum radius, ALLEGRO_COLOR color);
-	
-	void UpdateForce(vector<Planet*>);
+
+	void UpdateForce(std::vector<Planet*>);
 	void UpdatePosition(BigNum timeStep);
 
 	void Draw(BigNum pixelToMeter, Vector2 camPos, Vector2 screenSize, int index, ALLEGRO_FONT*);
@@ -33,4 +33,3 @@ private:
 	bool firstUpdate;
 
 };
-
