@@ -28,7 +28,7 @@ PlanetTestState::PlanetTestState(Point screenSize, ALLEGRO_KEYBOARD_STATE* keySt
 	//Jupiter
 	planets.push_back(new Planet(Vector2(778547200000, 0), Vector2(0, 13070), "1898600000000000000000000000", "69911000", al_map_rgb(184, 148, 77)));
 	//Saturn
-	planets.push_back(new Planet(Vector2(-1433449370000, 0), Vector2(0, /*9690*/0), "568460000000000000000000000", "58232000", al_map_rgb(255, 194, 102)));
+	planets.push_back(new Planet(Vector2(-1433449370000, 0), Vector2(0, 9690), "568460000000000000000000000", "58232000", al_map_rgb(255, 194, 102)));
 }
 
 void PlanetTestState::Update(GameTime*)
